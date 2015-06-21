@@ -4,7 +4,7 @@ import (
     "fmt"
     "time"
 
-    "github.com/freeformz/go-heroku-example/message"
+    "github.com/fellipecastro/hello-golang/message"
 )
 
 func main() {
