@@ -1,3 +1,3 @@
 package message
 
-const Hello = "hello, world!"
+const Hello = "Hello, 世界"

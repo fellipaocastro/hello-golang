@@ -2,19 +2,22 @@ package main
 
 import (
     "fmt"
+    "flag"
+    "log"
     "net/http"
-    "os"
+
+    "github.com/fellipecastro/hello-golang/message"
 )
 
 func main() {
+    port := flag.String("port", "8080", "HTTP Port")
+    flag.Parse()
+
+    log.Println("Starting Server on", *port)
     http.HandleFunc("/", hello)
-    fmt.Println("listening...")
-    err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
-    if err != nil {
-        panic(err)
-    }
+    log.Fatal(http.ListenAndServe(":"+*port, nil))
 }
 
 func hello(res http.ResponseWriter, req *http.Request) {
-    fmt.Fprintln(res, "hello, heroku")
+    fmt.Fprintln(res, message.Hello)
 }
