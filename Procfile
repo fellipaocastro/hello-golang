@@ -1,2 +1,2 @@
 web: hello-golang
-worker: work
+worker: worker
