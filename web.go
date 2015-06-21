@@ -18,6 +18,6 @@ func main() {
     log.Fatal(http.ListenAndServe(":"+*port, nil))
 }
 
-func hello(res http.ResponseWriter, req *http.Request) {
-    fmt.Fprintln(res, message.Hello)
+func hello(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintln(w, message.Hello)
 }
